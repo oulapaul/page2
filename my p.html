@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Welcome to JamboPay</title>  
+    <style>  
+        body {  
+            font-family: Georgia, 'Times New Roman';  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            justify-content: center;  
+            height: 100vh;  
+            margin: 10px;  
+            background-color: wheat;  
+        }  
+
+        h1 {  
+            text-transform: uppercase; 
+            text-decoration: underline;
+            color: blue; 
+            cursor: pointer;
+        }  
+
+        .button-container {  
+            display: flex;  
+            gap: 50px;  
+            margin: 20px  0;
+            height: 6vh;
+            justify-content:center;
+            position:relative;
+            width:4%;
+            border-radius:70%; 
+        }  
+
+        .button {  
+            padding: 10px 20px;  
+            border: 2px solid;  
+            border-radius: 25px;  
+            background-color:gray ;  
+            color:black;  
+            cursor: pointer;   
+        }  
+
+        .button.selected {  
+            background-color: rgb(235, 18, 18);  
+            color:gold;
+             
+        }  
+
+        table {  
+            margin-top: 80px;  
+            border-collapse: collapse;                                                          
+            width: 50%;  
+            max-width: 600px;  
+            background-color: teal; 
+            cursor: pointer; 
+             column-rule-color: black;
+        }  
+
+        th, td {  
+            border: 5px solid #ddd;  
+            padding: 12px;  
+            text-align: center; 
+            color: lavender;
+            
+        }  
+
+        th {  
+            background-color: black;  
+            color: aqua;  
+        }  
+
+        @media (max-width:600px) {  
+            .button-container {  
+                flex-direction: column;  
+                align-items: center;  
+            }  
+
+            table {  
+                width: 100%;  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <h1>Welcome to JamboPay</h1>  
+
+    <div class="button-container">  
+        <div class="button" onclick="selectButton(this)">Top Up Account</div>  
+        <div class="button" onclick="selectButton(this)">Pay</div>  
+        <div class="button" onclick="selectButton(this)">Send Money</div>  
+        <div class="button" onclick="selectButton(this)">Bill Payment</div>  
+    </div>  
+
+    <table>  
+        <thead>  
+            <tr>  
+                <th>Service</th>  
+                <th>Amount</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr>  
+                <td>Airtime</td>  
+                <td>Ksh 15,000</td>  
+            </tr>  
+            <tr>  
+                <td>Pay TV</td>  
+                <td>Ksh 35,000</td>  
+            </tr>  
+            <tr>  
+                <td>Data</td>  
+                <td>Ksh 50,000</td>  
+            </tr>  
+        </tbody>  
+    </table>  
+
+    <script>  
+        function selectButton(button) {  
+            const buttons = document.querySelectorAll('.button');  
+            buttons.forEach(btn => btn.classList.remove('selected'));  
+            button.classList.add('selected');  
+        }  
+    </script>  
+
+</body>  
+</html>
